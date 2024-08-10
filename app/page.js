@@ -1,9 +1,10 @@
+import Link from "next/link";
+import Header from "./components/Header/Header";
 
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="">
-      
+    <main >
+      <Header/>
     </main>
   );
 }
