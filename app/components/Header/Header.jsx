@@ -15,22 +15,38 @@ function Header() {
   };
 
   return (
-    <header className="px-8 py-4 my-2 md:grid md:grid-cols-6 text-gray-400">
+    <header className="font-bold py-4 my-2 lg:grid lg:grid-cols-6 text-gray-400">
       <figure className="flex justify-between items-center">
         {/* Logo */}
         <Image src="/logo.svg" alt="logo icon" width={80} height={80} />
 
         {/* Menu Icon - Only visible on small screens */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           {isMenuOpen ? (
             <LiaTimesSolid
-              className="text-4xl cursor-pointer"
+              className="text-4xl cursor-pointer focus:outline-none focus:ring-2 hover:opacity-70 focus:ring-cyan transition-opacity duration-300"
               onClick={toggleMenu}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  toggleMenu();
+                }
+              }}
+              role="button"
+              aria-label="Close menu" // Added aria-label for accessibility
             />
           ) : (
             <IoMdMenu
-              className="text-4xl cursor-pointer"
+              className="text-4xl cursor-pointer focus:outline-none focus:ring-2  hover:opacity-70 focus:ring-cyan transition-opacity duration-300"
               onClick={toggleMenu}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  toggleMenu();
+                }
+              }}
+              role="button"
+              aria-label="Open menu" // Added aria-label for accessibility
             />
           )}
         </div>
@@ -40,13 +56,15 @@ function Header() {
       <nav
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:flex md:justify-between md:items-center md:col-start-2 md:-col-end-1`}
+        }  bg-dark-violet text-white py-4 px-4 mt-3 lg:mt-0 rounded-xl lg:text-grayish-violet lg:bg-white lg:flex lg:justify-between lg:items-center lg:col-start-2 lg:-col-end-1`}
       >
         <NavBar />
 
-        <aside className="grid items-center grid-cols-2 gap-4 mt-4">
-          <Link href="/login"> Login </Link>
-          <button className="bg-green-500 capitalize text-white py-3 px-4 rounded-3xl">
+        <aside className="grid place-items-center items-center lg:grid-cols-2 gap-4 mt-4 lg:mt-0">
+          <Link href="/login hover:text-very-dark-violet transition-all duration-30">
+            Login
+          </Link>
+          <button className="bg-cyan font-bold capitalize w-full hover:opacity-85 transition-opacity duration-300 text-white py-3 px-4 rounded-3xl">
             sign up
           </button>
         </aside>

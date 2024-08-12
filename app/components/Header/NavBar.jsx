@@ -7,10 +7,15 @@ function NavBar({ className }) {
     { name: "resources", href: "/resources" },
   ];
   return (
-    <ul className={`grid grid-cols-3 ${className}`}>
+    <ul
+      className={`grid gap-4 place-items-center lg:gap-0  lg:grid-cols-3 ${className}`}
+    >
       {navListItems.map((listItem, index) => {
         return (
-          <li key={index} className="capitalize md:mx-3 lg:mx-8 8text-center">
+          <li
+            key={index}
+            className="capitalize lg:mx-8 hover:text-very-dark-violet transition-all duration-300"
+          >
             <Link href={listItem.href}>{listItem.name}</Link>
           </li>
         );
