@@ -4,7 +4,7 @@ function Hero() {
   return (
     <section className="grid place-items-center  lg:grid-cols-2 gap-8 lg:gap-24">
       {/** hero text content */}
-      <div className="grid gap-4">
+      <div className="grid gap-4 text-center sm:text-left">
         <h1 className="text-6xl tracking-wide leading-tight">
           More than just shorter links
         </h1>
@@ -12,7 +12,7 @@ function Hero() {
           Build your brand recognition and get detailed insights on how your
           links are performing
         </p>
-        <button className="bg-cyan font-bold capitalize w-fit text-white py-3 px-8 rounded-3xl hover:opacity-75 transition-all duration-300">
+        <button className="bg-cyan mx-auto sm:mx-0 font-bold capitalize w-fit text-white py-3 px-8 rounded-3xl hover:opacity-75 transition-all duration-300">
           get started
         </button>
       </div>

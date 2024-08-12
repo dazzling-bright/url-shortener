@@ -61,9 +61,9 @@ function Header() {
         <NavBar />
 
         <aside className="grid place-items-center items-center lg:grid-cols-2 gap-4 mt-4 lg:mt-0">
-          <Link href="/login hover:text-very-dark-violet transition-all duration-30">
-            Login
-          </Link>
+          <button className="bg-transparent font-bold capitalize hover:opacity-85  text-white py-3 px-4 rounded-3xl hover:text-very-dark-violet transition-all duration-300 w-full hover:bg-gray text-center">
+            <Link href="/login">Login</Link>
+          </button>
           <button className="bg-cyan font-bold capitalize w-full hover:opacity-85 transition-opacity duration-300 text-white py-3 px-4 rounded-3xl">
             sign up
           </button>
