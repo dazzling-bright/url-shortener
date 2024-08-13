@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import InputField from "./InputField";
+import OutputField from "./Output";
+import Services from "./Services";
 
-function InputField() {
+function MainBody() {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
   const [shortenedUrl, setShortenedUrl] = useState("");
@@ -40,38 +43,20 @@ function InputField() {
       }
     }
   };
-
   return (
-    <form
-      className="flex flex-col lg:flex-row gap-4 mt-8 bg-shorten-mobile md:bg-shorten-desktop bg-cover bg-center rounded-lg shadow-lg p-8"
-      onSubmit={handleSubmit}
-    >
-      <p className="flex-1">
-        <input
-          className={`${
-            error ? "border-red" : "border-gray"
-          } block w-full p-4 text-lg rounded-lg border-2 border-gray bg-white focus:border-cyan focus:outline-none`}
-          placeholder="Shorten a link here ..."
-          aria-label="Shorten a link"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          onMouseDown={() => setError(false)}
-        />
-        {error && <p className="text-red italic mt-1">{error}</p>}
-      </p>
-      <button
-        type="submit"
-        className="capitalize text-white hover:opacity-85 bg-cyan hover:shadow-md transition-all duration-300 font-bold py-4 px-8 rounded-lg"
-      >
-        Shorten it!
-      </button>
-      {shortenedUrl && (
-        <p className="text-green-500 mt-4">
-          Shortened URL: <a href={shortenedUrl}>{shortenedUrl}</a>
-        </p>
-      )}
-    </form>
+    <main className="bg-grayish-violet pb-2 mt-40">
+      <InputField
+        inputValue={inputValue}
+        error={error}
+        setInputValue={setInputValue}
+        shortenedUrl={shortenedUrl}
+        handleSubmit={handleSubmit}
+        setError={setError}
+      />
+      <OutputField shortenedUrl={shortenedUrl} />
+      <Services />
+    </main>
   );
 }
 
-export default InputField;
+export default MainBody;

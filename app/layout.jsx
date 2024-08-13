@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`max-w-7xl mx-auto px-2 sm:px-16 ${ubuntu.className}`}>
+      <body className={`max-w-7xl mx-auto ${ubuntu.className}`}>
         {children}
       </body>
     </html>

@@ -15,7 +15,7 @@ function Header() {
   };
 
   return (
-    <header className="font-bold py-4 my-2 lg:grid lg:grid-cols-6 text-gray-400">
+    <header className="font-bold py-4 my-2 lg:grid lg:grid-cols-6">
       <figure className="flex justify-between items-center">
         {/* Logo */}
         <Image src="/logo.svg" alt="logo icon" width={80} height={80} />
@@ -45,7 +45,7 @@ function Header() {
                   toggleMenu();
                 }
               }}
-              role="button"
+              // role="button"
               aria-label="Open menu" // Added aria-label for accessibility
             />
           )}
@@ -54,17 +54,17 @@ function Header() {
 
       {/* NavBar and Login/Signup - Hidden on small screens initially */}
       <nav
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        }  bg-dark-violet text-white py-4 px-4 mt-3 lg:mt-0 rounded-xl lg:text-grayish-violet lg:bg-white lg:flex lg:justify-between lg:items-center lg:col-start-2 lg:-col-end-1`}
+        className={` ${
+          isMenuOpen ? " block " : " hidden"
+        } transition-all duration-300  bg-dark-violet text-white py-4 px-4 mt-3 lg:mt-0 rounded-xl lg:text-grayish-violet lg:bg-white lg:flex lg:justify-between lg:items-center lg:col-start-2 lg:-col-end-1`}
       >
         <NavBar />
 
         <aside className="grid place-items-center items-center lg:grid-cols-2 gap-4 mt-4 lg:mt-0">
-          <button className="bg-transparent font-bold capitalize hover:opacity-85  text-white py-3 px-4 rounded-3xl hover:text-very-dark-violet transition-all duration-300 w-full hover:bg-gray text-center">
+          <button className="bg-transparent font-bold capitalize hover:opacity-85  text-white lg:text-grayish-violet py-3 px-4 rounded-3xl hover:text-very-dark-violet transition-all duration-300 w-full hover:bg-gray text-center">
             <Link href="/login">Login</Link>
           </button>
-          <button className="bg-cyan font-bold capitalize w-full hover:opacity-85 transition-opacity duration-300 text-white py-3 px-4 rounded-3xl">
+          <button className="bg-cyan font-bold text-nowrap capitalize w-full hover:opacity-85 transition-opacity duration-300 text-white py-3 px-4 rounded-3xl">
             sign up
           </button>
         </aside>
