@@ -14,9 +14,9 @@ function NavBar({ className }) {
         return (
           <li
             key={index}
-            className="capitalize py-3 px-4 lg:mx-8 hover:text-very-dark-violet transition-all duration-300"
+            className="capitalize py-2 px-4 lg:mx-8 hover:text-very-dark-violet transition-all duration-300"
           >
-            <Link href={listItem.href}>{listItem.name}</Link>
+            <Link href={listItem.href} className="py-2">{listItem.name}</Link>
           </li>
         );
       })}

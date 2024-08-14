@@ -2,7 +2,17 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <section className="grid place-items-center  lg:grid-cols-2 gap-8 lg:gap-24">
+    <section
+      id="main-content"
+      className="grid place-items-center lg:grid-cols-2 gap-8 lg:gap-24"
+      tabIndex="-1" 
+      // tabIndex = -1, this ensures this section  can be focused using the skip link in the navigation menu 
+      aria-label="Main content" 
+    >
+      {/* Announcement for screen readers */}
+      <span role="alert" className="sr-only" aria-live="assertive">
+        You have now reached the main content.
+      </span>
       {/** hero text content */}
       <div className="grid gap-4 text-center sm:text-left">
         <h1 className="text-6xl tracking-wide leading-tight">
