@@ -10,8 +10,7 @@ export async function GET(request) {
     const apiUrl = "https://api.t.ly/api/v1/link/shorten";
 
     const headers = {
-      Authorization:
-        "Bearer OUljwKkUtqQDMH2ubfXGDCLoi6m0KAvdnmFnok8OEV5gNOCxn10AqY0jDdIq",
+      Authorization: `Bearer ${process.env.API_KEY}`,
       "Content-Type": "application/json",
       Accept: "application/json",
     };
