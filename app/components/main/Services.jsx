@@ -55,7 +55,6 @@ function Services() {
                   height={60}
                   alt=""
                 />
-             
               </figure>
               <h2 className="font-bold text-xl text-very-dark-violet">
                 {header}

@@ -27,7 +27,7 @@ function InputField({
       </p>
       <button
         type="submit"
-        className="capitalize text-white hover:opacity-85 bg-cyan hover:shadow-md lg:self-center transition-all duration-300 font-bold py-4 px-8 rounded-lg h-[60px]"
+        className="capitalize text-white hover:opacity-80 bg-cyan  hover:shadow-md lg:self-center transition-all duration-300 font-bold py-4 px-8 rounded-lg h-[60px]"
       >
         Shorten it!
       </button>
